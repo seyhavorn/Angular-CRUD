@@ -6,9 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { PostComponent } from './post/post.component';
+import { PostDetailComponent } from './post/post-detail/post-detail.component';
+import { PostEditComponent } from './post/post-edit/post-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoComponent, PostComponent],
+  declarations: [AppComponent, TodoComponent, PostComponent, PostDetailComponent, PostEditComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

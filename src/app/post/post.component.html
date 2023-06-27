@@ -18,9 +18,9 @@
         <td>{{ post.userId }}</td>
         <td>
           <div class="d-flex justify-content-center align-items-center gap-2">
-            <button class="btn btn-sm btn-primary">View</button>
-            <button class="btn btn-sm btn-info">Edit</button>
-            <button class="btn btn-sm btn-danger">Delete</button>
+            <button class="btn btn-sm btn-primary" (click)="getPostById(post.id)">View</button>
+            <!-- <button class="btn btn-sm btn-info">Edit</button> -->
+            <button class="btn btn-sm btn-danger" (click)="deletePost(post.id)">Delete</button>
           </div>
         </td>
       </tr>

@@ -1,0 +1,44 @@
+<div class="container">
+  <h1 class="mt-5">My Post:</h1>
+  <button class="btn btn-sm btn-primary mt-4 float-right" (click)="backButton()">Back</button>
+  <div class="mt-3 gap-3">
+    <h1><span class="fw-bolder">Id :</span>{{ post?.id }}</h1>
+    <h1><span class="fw-bolder">User Id : </span>{{ post?.userId }}</h1>
+    <h2><span class="fw-bolder">Title : </span> {{ post?.title }}</h2>
+    <h2><span class="fw-bolder">Body : </span>{{ post?.body }}</h2>
+  </div>
+
+  <h1 class="text-center text-uppercase fw-bold mt-5 mb-3" style="font-size: 1.5rem">List of Comments:</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="!comments">
+        <td colspan="5" class="text-center fw-bolder">No comments available</td>
+      </tr>
+      <tr *ngFor="let comment of comments; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ comment.name }}</td>
+        <td>{{ comment.email }}</td>
+        <td>{{ comment.body }}</td>
+        <td>
+          <div class="d-flex justify-content-center align-items-center gap-2">
+            <button class="btn btn-sm btn-primary" (click)="getCommentById(post.id)">View</button>
+            <!-- <button class="btn btn-sm btn-info">Edit</button> -->
+            <button class="btn btn-sm btn-danger" (click)="deleteComment(comment.id)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
+
