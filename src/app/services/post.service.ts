@@ -14,7 +14,15 @@ export class PostService {
     return this.http.get(`${this.baseUrl}/posts`);
   }
 
-  getPost(id: number) {
+  getPost(id: any) {
     return this.http.get(`${this.baseUrl}/posts/${id}`);
+  }
+
+  editPost(id: string, title: string, body: string) {
+    return this.http.patch(`${this.baseUrl}`, { title, body });
+  }
+
+  deletePost(id: string) {
+    return this.http.delete(`${this.baseUrl}/posts/${id}`);
   }
 }
