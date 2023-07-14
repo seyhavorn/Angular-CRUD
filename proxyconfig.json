@@ -1,0 +1,16 @@
+{
+  "/api*": {
+    "target": "https://klocknow-api.abitech.a2hosted.com/api",
+    "secure": true,
+    "changeOrigin": true
+  },
+  "/staging/*" : {
+		"target": "https://klocknow-api.abitech.a2hosted.com/affpi",
+		"secure": true,
+		"logLevel": "debug",
+		"changeOrigin": true,
+		"pathRewrite": {
+            "^/staging": " "
+        }
+	}
+}
